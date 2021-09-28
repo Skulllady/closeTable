@@ -1,0 +1,10 @@
+* {
+    margin: 5px;
+}
+
+ul {
+    /* margin: 10px; */
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-end;
+}
