@@ -4,7 +4,7 @@ const db = require('../../db/models');
 
 const router = express.Router();
 
-//view all reservations listed
+//view all reservations
 router.get('/reservations', asyncHandler(async function (req, res) { }))
 
 //to create a reservation
