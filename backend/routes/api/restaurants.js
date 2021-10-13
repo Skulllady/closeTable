@@ -47,6 +47,6 @@ router.post('/:id/reviews', asyncHandler(async (req, res) => {
         reservationDate
     })
 
-
+    res.sendStatus(201);
 
 }))
