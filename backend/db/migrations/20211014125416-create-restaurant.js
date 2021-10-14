@@ -9,28 +9,61 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       address: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      latitude: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+      },
+      longitude: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       phoneNumber: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      daysOfOperation: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       hoursOfOperation: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       pricing: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      capacity: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      menu: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      images: {
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+        allowNull: false,
       },
       cuisine: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      diningOption: {
-        type: Sequelize.STRING
+      diningOptions: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

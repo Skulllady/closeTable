@@ -18,7 +18,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     phoneNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    daysOfOperation: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     hoursOfOperation: {
@@ -37,6 +41,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    images: {
+      type: DataTypes.ARRAY(DataTypes.TEXT),
+      allowNull: false,
+    },
     cuisine: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -45,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    diningOption: {
+    diningOptions: {
       type: DataTypes.STRING,
       allowNull: false,
     },
