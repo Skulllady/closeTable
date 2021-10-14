@@ -47,7 +47,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
   User.associate = function (models) {
-    
   };
 
   User.prototype.validatePassword = function (password) {
