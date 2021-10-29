@@ -5,18 +5,17 @@ const { Restaurant, Review, User } = require('../../db/models')
 const router = express.Router();
 
 //view all restaurants listed
-router.get('/restaurants', asyncHandler(async function (req, res) {
+router.get('/', asyncHandler(async function (req, res) {
 
   const restaurants = await Restaurant.findAll({
     order: [['id', 'DESC']]
   })
-
-  return res.render({ restaurants })
-
+  return res.json(restaurants)
 }))
 
+
 //view a specific restaurant
-router.get('/restaurants/:id', asyncHandler(async function (req, res) {
+router.get('/:id', asyncHandler(async function (req, res) {
 
   const restaurantId = parseInt(req.params.id, 10)
 
@@ -64,3 +63,5 @@ router.put('/reviews/:id', asyncHandler(async (req, res) => {
     await reviewToUpdate.update({ reservationDate, rating, review })
   }
 }))
+
+module.exports = router;

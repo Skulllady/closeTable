@@ -1,7 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session';
+import restaurantReducer from './restaurant'
 
+const rootReducer = combineReducers({
+    session: sessionReducer,
+    restaurant: restaurantReducer
+});
 
 let enhancer;
 
@@ -18,9 +23,7 @@ const configureStore = (preloadedState) => {
     return createStore(rootReducer, preloadedState, enhancer);
 };
 
-const rootReducer = combineReducers({
-    session: sessionReducer,
-});
+
 
 // window.store.dispatch(window.sessionActions.login({
 //     credential: 'Demo-lition',

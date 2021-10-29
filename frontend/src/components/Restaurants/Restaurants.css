@@ -1,0 +1,7 @@
+.nav-entry-image {
+    border-radius: 10px;
+    background-size: 400px;
+    width: 400px;
+    height: 270px;
+    cursor: pointer;
+}
