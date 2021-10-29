@@ -8,29 +8,29 @@ const router = express.Router();
 router.get('/', asyncHandler(async function (req, res) {
 
   const restaurants = await Restaurant.findAll({
-    order: [['id', 'DESC']]
+    order: [['id', 'ASC']]
   })
   return res.json(restaurants)
 }))
 
 
 //view a specific restaurant
-router.get('/:id', asyncHandler(async function (req, res) {
+router.get('/:id(\\d+)', asyncHandler(async function (req, res) {
 
   const restaurantId = parseInt(req.params.id, 10)
 
-  const restaurant = await Restaurant.findbyPk(restaurantId);
+  const restaurant = await Restaurant.findByPk(restaurantId);
 
   //get all reviews for selected restaurant
-  let reviews = await Review.findAll({
-    where: {
-      restaurantId
-    },
-    include: User,
-    order: [['createdAt', 'DESC']]
+  // let reviews = await Review.findAll({
+  //   where: {
+  //     restaurantId
+  //   },
+  //   include: User,
+  //   order: [['createdAt', 'DESC']]
 
-  })
-  return res.render({ restaurant, reviews })
+  // })
+  return res.json(restaurant)
 }))
 
 
