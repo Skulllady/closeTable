@@ -13,7 +13,7 @@ function Restaurants() {
         dispatch(getRestaurants());
     }, [dispatch]);
 
-    console.log("this is the current id" + restaurants.id)
+    console.log(restaurants)
     return (
         <div>
             <div>

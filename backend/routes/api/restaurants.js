@@ -22,15 +22,15 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res) {
   const restaurant = await Restaurant.findByPk(restaurantId);
 
   //get all reviews for selected restaurant
-  // let reviews = await Review.findAll({
-  //   where: {
-  //     restaurantId
-  //   },
-  //   include: User,
-  //   order: [['createdAt', 'DESC']]
+  let reviews = await Review.findAll({
+    where: {
+      restaurantId
+    },
+    include: User,
+    order: [['createdAt', 'DESC']]
 
-  // })
-  return res.json(restaurant)
+  })
+  return res.send({restaurant, reviews})
 }))
 
 
