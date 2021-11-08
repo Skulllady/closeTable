@@ -22,7 +22,7 @@ function Restaurants() {
                         <NavLink key={res.id} to={`/restaurants/${res.id}`}>
                             <button
                                 className="nav-entry-image"
-                                style={{ backgroundImage: `url('${res.images[1]}')` }}
+                                style={{ backgroundImage: `url('${res.images[0]}')` }}
                             >
                             </button>
                             {res.id}: {res.name}
