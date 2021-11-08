@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import restaurantReducer, { getRestaurant } from '../../store/restaurant';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import key from "./apiKey.js"
 
 function Restaurant() {
     const dispatch = useDispatch();
@@ -23,9 +24,7 @@ function Restaurant() {
         lat: -3.745,
         lng: -38.523
     };
-
-    console.log(restaurant)
-    console.log(reviews)
+    console.log(key)
     return (
         <div>
             <div>
@@ -42,7 +41,7 @@ function Restaurant() {
                 ))}
             </div>
             <LoadScript
-                googleMapsApiKey="AIzaSyABdRIkqcDyFxSoksmn6XCkrU6Z5N2iZao"
+                googleMapsApiKey={key.key}
             >
                 <GoogleMap
                     mapContainerStyle={containerStyle}
